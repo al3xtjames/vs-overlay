@@ -26,6 +26,7 @@ mkVapoursynthPythonSetuptools rec {
     fillborders
     placebo
     remap
+    vs-nlq
   ];
 
   vs_pythondeps = with vapoursynthPlugins; [
