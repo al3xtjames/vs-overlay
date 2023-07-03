@@ -71,7 +71,7 @@ if fnd == False:
   vspreview    = common.callPythonPackage ./tools/vspreview { python_call = common.callPythonPackage; };
   concatfs     = prev.callPackage ./tools/concatfs { }; #maybe useful for vob files
   vasviewer    = prev.callPackage ./tools/vasviewer { };
-
+  dovi_tool    = prev.callPackage ./tools/dovi_tool { inherit (prev.darwin.apple_sdk_11_0.frameworks) CoreText; };
 
 
   #mpv wrapper
