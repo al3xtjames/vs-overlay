@@ -180,6 +180,7 @@ in rec {
     bdngsp        = prev.callPackage ./rust/bdngsp.nix { };
     mpeg2stinx    = prev.callPackage ./rust/mpeg2stinx { };
     average       = prev.callPackage ./rust/average { };
+    vs-nlq        = prev.callPackage ./rust/vs-nlq { };
 
     #waf
     f3kdb = prev.callPackage ./plugins/f3kdb { };
