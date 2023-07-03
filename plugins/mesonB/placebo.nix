@@ -1,4 +1,4 @@
-{ lib,  fetchFromGitHub, libplacebo,  vulkan-headers, vulkan-loader, mkVapoursynthMesonB }:
+{ lib,  fetchFromGitHub, libdovi, libplacebo,  vulkan-headers, vulkan-loader, mkVapoursynthMesonB }:
 
 mkVapoursynthMesonB rec {
   pname = "vs-placebo";
@@ -14,7 +14,7 @@ mkVapoursynthMesonB rec {
   };
 
   modeb_replace = "vapoursynth_dep.get_variable(pkgconfig: 'libdir')";
-  buildInputs = [ libplacebo vulkan-headers vulkan-loader ];
+  buildInputs = [ libdovi libplacebo vulkan-headers vulkan-loader ];
 
   meta = with lib; {
     description = "A libplacebo-based debanding, scaling and color mapping plugin for VapourSynth";
