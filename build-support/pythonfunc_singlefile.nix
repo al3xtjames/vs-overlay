@@ -20,7 +20,7 @@
   vs_binarydeps,
   importname,
 
-
+  remove_vapoursynth_dep_pyproject ? 0,
   remove_vapoursynth_dep_reqtxt ? 0,
   remove_vapoursynth_dep_setupy ? 0,
 
@@ -54,6 +54,10 @@ buildPythonPackage (args // {
   '' else installPhase;
 
   postPatch =
+  (if remove_vapoursynth_dep_pyproject != 0 then ''
+    substituteInPlace pyproject.toml \
+        --replace "\"VapourSynth >= ${toString remove_vapoursynth_dep_pyproject}\"," ""
+  '' else "") +
   (if remove_vapoursynth_dep_reqtxt != 0 then ''
     substituteInPlace requirements.txt \
         --replace "VapourSynth>=${toString remove_vapoursynth_dep_reqtxt}" ""

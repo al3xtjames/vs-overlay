@@ -2,17 +2,17 @@
 
 mkVapoursynthPythonSetuptools rec {
   pname = "awsmfunc";
-  version = "1.3.3";
+  version = "1.3.4";
   importname = "awsmfunc";
 
   src = fetchFromGitHub {
     owner = "OpusGang";
     repo = pname;
     rev = "${version}";
-    sha256 = "sha256-XPDtcPIcA+40+8cGWOEp/6riv4aW8o5jF3C9iGSqDl8=";
+    sha256 = "sha256-7J7s/SdnA5/A/q4SaBfIWG+qOwHpjSrUzWkY1r63wwc=";
   };
 
-  remove_vapoursynth_dep_setupy = 57;
+  remove_vapoursynth_dep_pyproject = 57;
 
   propagatedBuildInputs = [
     numpy
