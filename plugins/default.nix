@@ -172,7 +172,7 @@ in rec {
 
 
     #already in nixpkgs
-    ffms2 = prev.ffms;
+    ffms2 = prev.callPackage ./other/ffms2.nix { };
     mvtools = prev.vapoursynth-mvtools;
 
     #rust
