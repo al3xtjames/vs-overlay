@@ -63,16 +63,16 @@ if fnd == False:
   vapoursynthPlugins = import ./plugins final prev;
 
   #tools
-  getnative    = common.callPythonPackage ./tools/getnative { };
-  getfnative   = common.callPythonPackage ./tools/getFnative { };
-  vspreview-rs = prev.callPackage ./tools/vspreview-rs { };
-  d2vwitch     = prev.libsForQt5.callPackage ./tools/d2vwitch { };
-  wobbly       = prev.libsForQt5.callPackage ./tools/wobbly { };
-  vspreview    = common.callPythonPackage ./tools/vspreview { python_call = common.callPythonPackage; };
-  concatfs     = prev.callPackage ./tools/concatfs { }; #maybe useful for vob files
-  vasviewer    = prev.callPackage ./tools/vasviewer { };
-  dovi_tool    = prev.callPackage ./tools/dovi_tool { inherit (prev.darwin.apple_sdk_11_0.frameworks) CoreText; };
-
+  getnative      = common.callPythonPackage ./tools/getnative { };
+  getfnative     = common.callPythonPackage ./tools/getFnative { };
+  vspreview-rs   = prev.callPackage ./tools/vspreview-rs { };
+  d2vwitch       = prev.libsForQt5.callPackage ./tools/d2vwitch { };
+  wobbly         = prev.libsForQt5.callPackage ./tools/wobbly { };
+  vspreview      = common.callPythonPackage ./tools/vspreview { python_call = common.callPythonPackage; };
+  concatfs       = prev.callPackage ./tools/concatfs { }; #maybe useful for vob files
+  vasviewer      = prev.callPackage ./tools/vasviewer { };
+  dovi_tool      = prev.callPackage ./tools/dovi_tool { inherit (prev.darwin.apple_sdk_11_0.frameworks) CoreText; };
+  hdr10plus_tool = prev.callPackage ./tools/hdr10plus_tool { inherit (prev.darwin.apple_sdk_11_0.frameworks) CoreText; };
 
   #mpv wrapper
   #needs recompilation of mpv for every plugin combination
